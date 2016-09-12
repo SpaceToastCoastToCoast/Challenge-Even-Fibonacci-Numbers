@@ -7,14 +7,18 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
-  var isEven = true;
 
   // do your work here
-  for(let i = 1; i < maxFibValue; i += i) {
-    isEven = !isEven;
-    if(isEven) {
+  let fibMinusOne = 1;
+  let fibMinusTwo = 0;
+
+  for(let i = 1; i <= maxFibValue; i = (fibMinusOne + fibMinusTwo)) {
+    console.log(i);
+    if(i % 2 === 0) {
       sum += i;
     }
+    fibMinusTwo = fibMinusOne;
+    fibMinusOne = i;
   }
 
   return sum;
