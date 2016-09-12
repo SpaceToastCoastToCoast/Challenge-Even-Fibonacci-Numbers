@@ -7,8 +7,15 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
+  var isEven = true;
 
   // do your work here
+  for(let i = 1; i < maxFibValue; i += i) {
+    isEven = !isEven;
+    if(isEven) {
+      sum += i;
+    }
+  }
 
   return sum;
 }
