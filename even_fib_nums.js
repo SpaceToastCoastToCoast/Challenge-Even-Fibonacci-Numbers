@@ -13,7 +13,6 @@ function _sumFibs( maxFibValue ) {
   let fibMinusTwo = 0;
 
   for(let i = 1; i <= maxFibValue; i = (fibMinusOne + fibMinusTwo)) {
-    console.log(i);
     if(i % 2 === 0) {
       sum += i;
     }
@@ -29,12 +28,22 @@ function _highestFibonacciNumber (maxFibValue){
   var highest = 0;
 
   //define your base case, validate your input
-
+  if(typeof maxFibValue !== 'number') {
+    throw new TypeError('not a number');
+  }
 
   //do your work here
+  let fibMinusOne = 1;
+  let fibMinusTwo = 0;
+
+  for(let i = 1; i < maxFibValue; i = (fibMinusOne + fibMinusTwo)) {
+    highest = i;
+    fibMinusTwo = fibMinusOne;
+    fibMinusOne = i;
+  }
 
   return highest;
-};
+}
 
 /**
  * Do not modify code below.
